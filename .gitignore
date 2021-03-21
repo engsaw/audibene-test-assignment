@@ -1,0 +1,3 @@
+allure-results
+# Project exclude paths
+/target/
