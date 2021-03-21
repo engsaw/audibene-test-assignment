@@ -5,7 +5,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
@@ -42,8 +41,8 @@ public class CallApiEndpoint {
         return getJokesResponse;
     }
 
+    @Step ("Validate Jokes For the category : {1} ")
     public  void validateJokesForSpecificCategory(String jokesContent, String category){
-
-        assertEquals(jokesContent, apiHelpers.readJsonFixtures());
+        assertEquals(jokesContent, apiHelpers.readJsonFixtures(category));
     }
 }

@@ -15,8 +15,8 @@ public class ApiHelpers {
     public ApiHelpers() {
     }
 
-    public String readJsonFixtures(){
-        Path jsonFixturePath = Paths.get(System.getProperty("user.dir")+"/src/main/java/fixtures/sport.json");
+    public String readJsonFixtures(String jokesCategoryName){
+        Path jsonFixturePath = Paths.get(System.getProperty("user.dir")+"/src/main/java/fixtures/"+jokesCategoryName+".json");
         String content;
         try
         {

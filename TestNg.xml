@@ -2,6 +2,12 @@
 
 <suite thread-count="1" verbose="1" name="Audibene" annotations="JDK" parallel="tests">
 
+    <test name="Jokes Api Tests">
+        <classes>
+            <class name="org.audibene.apitests.GetCategoriesTests"/>
+        </classes>
+    </test>
+
     <test name="Login UI Tests">
         <classes>
             <class name="org.audibene.uitests.LoginUITests"/>

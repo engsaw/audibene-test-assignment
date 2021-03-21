@@ -1,8 +1,9 @@
 package org.audibene.apitests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.audibene.utilities.ApiHelpers;
 import org.audibene.utilities.Configuration;
-import org.audibene.utilities.UIHelpers;
 import org.audibene.utilities.CallApiEndpoint;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
@@ -10,10 +11,6 @@ import org.testng.annotations.Test;
 
 
 import java.util.List;
-
-import static org.testng.Assert.assertEquals;
-
-
 
 public class GetCategoriesTests {
 
@@ -30,26 +27,32 @@ public class GetCategoriesTests {
         callApiEndpoint = new CallApiEndpoint();
     }
 
-    @Test
+    @Feature("Jokes Api")
+    @Description("Invoke categories endpoint with get request Successfully")
+    @Test (priority = 0, description = "Invoke Jokes Category main catalog")
     public void getCategories() {
+        //Save the list of categories in an Arraylist by calling https://api.chucknorris.io/jokes/categories
+        //["animal","career","celebrity","dev","explicit","fashion","food","history","money","movie","music","political","religion","science","sport","travel"]
+        listOfCategories = callApiEndpoint.getCategories();
 
-       listOfCategories = callApiEndpoint.getCategories();
 
-        for(int i = 1; i< listOfCategories.size(); i++){
-
-          System.out.println(listOfCategories.get(i)+"\n");
-          System.out.println(callApiEndpoint.getJokesForSpecificCategory(listOfCategories.get(i)).asString());
-           // callApiEndpoint.validateJokesForSpecificCategory();
-        }
     }
-    @Test
-    public void getContentForEachCategory() {
 
 
-        for(int i = 0; i< listOfCategories.size(); i++){
+    //Iterate over each category name (e. animal, sport, etc..)  and use it as a parameter to get content of jokes for this category
+    //Then validate them against each json file in the fixtures
+    @Feature("Jokes Api")
+    @Description("Invoke each one of the categories detail page")
+    @Test (priority = 1, description = "Invoke Jokes Category Page")
+    public void getAndValidateContentForEachCategory() {
+        for (int i = 0; i < listOfCategories.size(); i++) {
 
-            callApiEndpoint.getCategories();
+            String jokesCategoryName = listOfCategories.get(i);
+            String jokesCategoryContentAsString = callApiEndpoint.getJokesForSpecificCategory(jokesCategoryName).asString();
+            callApiEndpoint.validateJokesForSpecificCategory(jokesCategoryContentAsString,jokesCategoryName);
         }
+
+
     }
 
 
