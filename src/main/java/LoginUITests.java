@@ -24,7 +24,7 @@ public void setUp(){
 
     @Feature("Login")
     @Description("Provide correct password and check the results")
-    @Test(priority = 0)
+    @Test(priority = 0, description = "Login with correct user/password" )
     public void loginSuccessfully() {
 
         //Create an instance of Login Page object model
@@ -44,7 +44,7 @@ public void setUp(){
 
     @Feature("Login")
     @Description("Provide wrong password and check the results")
-    @Test (priority = 1)
+    @Test (priority = 1, description = "Login with wrong user/password" )
     public void loginUnSuccessfully() {
 
         //Create an instance of Login Page object model
