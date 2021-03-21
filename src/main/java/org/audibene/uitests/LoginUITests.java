@@ -14,22 +14,21 @@ public class LoginUITests {
     WebDriver driver;
     Configuration myConfiguration;
     UIHelpers myUIHelpers;
+    LoginPagePOM loginPage;
 
     @BeforeTest
     public void setUp() {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
+        //Create an instance of Login Page object model
+        loginPage = new LoginPagePOM(this.driver);
     }
 
     @Feature("Login")
     @Description("Provide correct password and check the results")
     @Test(priority = 0, description = "Login with correct user/password")
     public void loginSuccessfully() {
-
-        //Create an instance of Login Page object model
-        LoginPagePOM loginPage = new LoginPagePOM(this.driver);
-
         //Open Login page URL
         driver.get(loginPage.loginPageURL);
 

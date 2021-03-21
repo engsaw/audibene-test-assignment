@@ -15,12 +15,15 @@ public class ExitIntentUITests {
     public WebDriver driver;
     Configuration myConfiguration;
     UIHelpers myUIHelpers;
+    ExitIntentPagePOM exitIntentPage;
 
     @BeforeTest
     public void setUp() {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
+        //Create an instance of exit intent Page object model
+        exitIntentPage = new ExitIntentPagePOM(this.driver);
     }
 
     @Feature("Exit Intent Page")
@@ -28,10 +31,8 @@ public class ExitIntentUITests {
     @Test(priority = 0, description = "Mouse out of the viewport pane and see a modal window appear")
     public void exitIntent() throws AWTException {
 
-        //Create an instance of exit intent Page object model
-        ExitIntentPagePOM exitIntentPage = new ExitIntentPagePOM(this.driver);
 
-        //Open Login page URL
+        //Open exitIntentPage page URL
         driver.get(ExitIntentPagePOM.exitIntentPageURL);
 
         //Move mouse

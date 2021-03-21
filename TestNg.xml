@@ -19,4 +19,10 @@
             <class name="org.audibene.uitests.ExitIntentUITests"/>
         </classes>
     </test>
+
+    <test name="Open New Window UI Tests">
+        <classes>
+            <class name="org.audibene.uitests.OpenNewWindowTests"/>
+        </classes>
+    </test>
 </suite>
