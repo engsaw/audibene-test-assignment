@@ -2,9 +2,15 @@
 
 <suite thread-count="1" verbose="1" name="Audibene" annotations="JDK" parallel="tests">
 
-    <test name="UI Tests">
+    <test name="Login UI Tests">
         <classes>
-            <class name="LoginUITests"/>
+            <class name="org.audibene.uitests.LoginUITests"/>
+        </classes>
+    </test>
+
+    <test name="Exit Intent UI Tests">
+        <classes>
+            <class name="org.audibene.uitests.ExitIntentUITests"/>
         </classes>
     </test>
 </suite>

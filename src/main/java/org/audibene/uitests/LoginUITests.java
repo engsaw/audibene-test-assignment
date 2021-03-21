@@ -1,30 +1,30 @@
+package org.audibene.uitests;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import org.audibene.utilities.Configuration;
+import org.audibene.utilities.Helpers;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
-
+import org.audibene.pom.LoginPagePOM;
 
 public class LoginUITests {
     WebDriver driver;
     Configuration myConfiguration;
     Helpers myHelpers;
 
-@BeforeTest
-public void setUp(){
-    myConfiguration = new Configuration(driver);
-    driver = myConfiguration.setUp();
-    myHelpers = new Helpers(driver);
-}
+    @BeforeTest
+    public void setUp() {
+        myConfiguration = new Configuration(driver);
+        driver = myConfiguration.setUp();
+        myHelpers = new Helpers(driver);
+    }
 
     @Feature("Login")
     @Description("Provide correct password and check the results")
-    @Test(priority = 0, description = "Login with correct user/password" )
+    @Test(priority = 0, description = "Login with correct user/password")
     public void loginSuccessfully() {
 
         //Create an instance of Login Page object model
@@ -34,17 +34,15 @@ public void setUp(){
         driver.get(loginPage.loginPageURL);
 
         //Login using correct user/pass
-        loginPage.login(loginPage.correctUserName,loginPage.correctPassword);
+        loginPage.login(loginPage.correctUserName, loginPage.correctPassword);
 
         //Validate we logged in successfully
         loginPage.validateSuccessfulLogin();
-
-
     }
 
     @Feature("Login")
     @Description("Provide wrong password and check the results")
-    @Test (priority = 1, description = "Login with wrong user/password" )
+    @Test(priority = 1, description = "Login with wrong user/password")
     public void loginUnSuccessfully() {
 
         //Create an instance of Login Page object model
@@ -54,7 +52,7 @@ public void setUp(){
         driver.get(loginPage.loginPageURL);
 
         //Login using correct user/pass
-        loginPage.login(loginPage.wrongUserName,loginPage.wrongPassword);
+        loginPage.login(loginPage.wrongUserName, loginPage.wrongPassword);
 
         //Validate we logged in successfully
         loginPage.validateUnSuccessfulLogin();

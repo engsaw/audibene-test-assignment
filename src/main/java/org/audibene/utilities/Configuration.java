@@ -1,3 +1,5 @@
+package org.audibene.utilities;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,10 +10,10 @@ public class Configuration {
     WebDriver mydriver;
 
     public Configuration(WebDriver driver) {
-    this.mydriver = driver;
+        this.mydriver = driver;
     }
 
-    public WebDriver setUp(){
+    public WebDriver setUp() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
         mydriver = new ChromeDriver();
         mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
