@@ -1,7 +1,7 @@
 package org.audibene.pom;
 
 import io.qameta.allure.Step;
-import org.audibene.utilities.Helpers;
+import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class LoginPagePOM {
 
     private WebDriver mydriver;
-    Helpers helpers;
+    UIHelpers UIHelpers;
 
     public static String userNameTxtboxProperty = "//*[@id=\"username\"]";
     public static String passwordTxtboxProperty = "//*[@id=\"password\"]";
@@ -43,19 +43,19 @@ public class LoginPagePOM {
     @Step("validate Successful Login")
     public void validateSuccessfulLogin() {
         assertEquals(mydriver.findElement(loggedInFlash).getText(), successfulLoggedInFlashTxt);
-        helpers.takeScreenshot(mydriver);
+        UIHelpers.takeScreenshot(mydriver);
 
 
     }
     @Step("validate UnSuccessful Login")
     public void validateUnSuccessfulLogin() {
         assertTrue(mydriver.findElement(loggedInFlash).getText().contains(unSuccessfulLoggedInFlashTxt));
-        helpers.takeScreenshot(mydriver);
+        UIHelpers.takeScreenshot(mydriver);
     }
 
     public LoginPagePOM(WebDriver driver) {
         this.mydriver = driver;
-        this.helpers = new Helpers(mydriver);
+        this.UIHelpers = new UIHelpers(mydriver);
     }
 
 

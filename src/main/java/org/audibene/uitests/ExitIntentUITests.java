@@ -8,20 +8,19 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.audibene.utilities.*;
 import org.audibene.pom.ExitIntentPagePOM;
-import org.audibene.utilities.*;
 
 import java.awt.*;
 
 public class ExitIntentUITests {
     public WebDriver driver;
     Configuration myConfiguration;
-    Helpers myHelpers;
+    UIHelpers myUIHelpers;
 
     @BeforeTest
     public void setUp() {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
-        myHelpers = new Helpers(driver);
+        myUIHelpers = new UIHelpers(driver);
     }
 
     @Feature("Exit Intent Page")
@@ -49,6 +48,6 @@ public class ExitIntentUITests {
     @AfterTest
     public void tearDown() {
         //Close window
-        myHelpers.closeWindow();
+        myUIHelpers.closeWindow();
     }
 }

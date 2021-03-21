@@ -5,10 +5,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class Helpers {
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class UIHelpers {
     WebDriver mydriver;
 
-    public Helpers(WebDriver mydriver) {
+    public UIHelpers(WebDriver mydriver) {
         this.mydriver = mydriver;
     }
 
@@ -19,9 +24,9 @@ public class Helpers {
 
     @Attachment(value = "Screenshot", type = "image/png")
     public byte [] takeScreenshot(WebDriver driver){
-
         return ((TakesScreenshot) mydriver).getScreenshotAs(OutputType.BYTES);
-
     }
+
+
 
 }

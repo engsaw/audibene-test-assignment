@@ -3,7 +3,7 @@ package org.audibene.uitests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.audibene.utilities.Configuration;
-import org.audibene.utilities.Helpers;
+import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -13,13 +13,13 @@ import org.audibene.pom.LoginPagePOM;
 public class LoginUITests {
     WebDriver driver;
     Configuration myConfiguration;
-    Helpers myHelpers;
+    UIHelpers myUIHelpers;
 
     @BeforeTest
     public void setUp() {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
-        myHelpers = new Helpers(driver);
+        myUIHelpers = new UIHelpers(driver);
     }
 
     @Feature("Login")
@@ -61,6 +61,6 @@ public class LoginUITests {
     @AfterTest
     public void tearDown() {
         //Close window
-        myHelpers.closeWindow();
+        myUIHelpers.closeWindow();
     }
 }

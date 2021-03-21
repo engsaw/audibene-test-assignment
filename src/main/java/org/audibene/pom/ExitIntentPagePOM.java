@@ -3,7 +3,7 @@ package org.audibene.pom;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.audibene.utilities.Helpers;
+import org.audibene.utilities.UIHelpers;
 import java.awt.*;
 
 import static org.testng.Assert.assertEquals;
@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 public class ExitIntentPagePOM {
 
     private WebDriver mydriver;
-    Helpers helpers;
+    UIHelpers UIHelpers;
 
     public static String pageTitle = "The Internet";
     public static String exitIntentPageURL = "https://the-internet.herokuapp.com/exit_intent";
@@ -34,7 +34,7 @@ public class ExitIntentPagePOM {
     public void checkForModalWindow() {
         mydriver.findElement(ouibounceModal).click();
         assertEquals(mydriver.findElement(ouibounceModalDivTitle).getText(), ouibounceModalDivTitleText);
-      helpers.takeScreenshot(mydriver);
+      UIHelpers.takeScreenshot(mydriver);
 
     }
 
@@ -46,7 +46,7 @@ public class ExitIntentPagePOM {
 
     public ExitIntentPagePOM(WebDriver driver) {
         this.mydriver = driver;
-        this.helpers = new Helpers(mydriver);
+        this.UIHelpers = new UIHelpers(mydriver);
     }
 
 
