@@ -35,9 +35,10 @@ public class GetCategoriesTests {
 
        listOfCategories = callApiEndpoint.getCategories();
 
-        for(int i = 0; i< listOfCategories.size(); i++){
+        for(int i = 1; i< listOfCategories.size(); i++){
 
-            System.out.println(callApiEndpoint.getJokesForSpecificCategory(listOfCategories.get(i)));
+          System.out.println(listOfCategories.get(i)+"\n");
+          System.out.println(callApiEndpoint.getJokesForSpecificCategory(listOfCategories.get(i)).asString());
            // callApiEndpoint.validateJokesForSpecificCategory();
         }
     }
