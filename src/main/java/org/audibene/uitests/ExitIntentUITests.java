@@ -10,6 +10,7 @@ import org.audibene.utilities.*;
 import org.audibene.pom.ExitIntentPagePOM;
 
 import java.awt.*;
+import java.net.MalformedURLException;
 
 public class ExitIntentUITests {
     public WebDriver driver;
@@ -18,7 +19,7 @@ public class ExitIntentUITests {
     ExitIntentPagePOM exitIntentPage;
 
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);

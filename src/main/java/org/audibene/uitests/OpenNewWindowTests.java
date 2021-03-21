@@ -10,6 +10,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+
 
 public class OpenNewWindowTests {
 
@@ -19,7 +21,7 @@ public class OpenNewWindowTests {
     OpenNewWindowPOM openNewWindowPOM;
 
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
@@ -45,11 +47,16 @@ public class OpenNewWindowTests {
         //Validate new window is correct
         openNewWindowPOM.validateNewPageContent();
 
+        //Close the new tab
+        myUIHelpers.closeWindow();
+
     }
 
     @AfterTest
     public void tearDown() {
         //Close window
+        openNewWindowPOM.switchToAnotherTab(0);
+
         myUIHelpers.closeWindow();
     }
 

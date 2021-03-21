@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.audibene.pom.LoginPagePOM;
 
+import java.net.MalformedURLException;
+
 public class LoginUITests {
     WebDriver driver;
     Configuration myConfiguration;
@@ -17,7 +19,7 @@ public class LoginUITests {
     LoginPagePOM loginPage;
 
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
