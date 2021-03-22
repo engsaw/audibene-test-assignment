@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class Configuration {
 
     WebDriver mydriver;
-    String runninngOption = "LOCAL.MAC";
+    String runninngOption = "DOCKER.CHROME";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
@@ -36,7 +36,7 @@ public class Configuration {
             return mydriver;
         }
 
-        else if (runninngOption == "dockerChrome"){
+        else if (runninngOption == "DOCKER.CHROME"){
             mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.chrome());
             mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
