@@ -31,7 +31,7 @@ public class DynamicControlsPagePOM {
 
         assertEquals( (mydriver.findElement(swapTextbox)).isEnabled(),false);
         mydriver.findElement(swapButton).click();
-        
+
     }
 
 
