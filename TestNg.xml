@@ -14,6 +14,12 @@
         </classes>
     </test>
 
+    <test name="Sorting UI Tests">
+        <classes>
+            <class name="org.audibene.uitests.SortingUITests"/>
+        </classes>
+    </test>
+
     <test name="Exit Intent UI Tests">
         <classes>
             <class name="org.audibene.uitests.ExitIntentUITests"/>

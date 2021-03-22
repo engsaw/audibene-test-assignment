@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class Configuration {
 
     WebDriver mydriver;
-    String runninngOption = "DOCKER.CHROME";
+    String runninngOption = "LOCAL.MAC";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
