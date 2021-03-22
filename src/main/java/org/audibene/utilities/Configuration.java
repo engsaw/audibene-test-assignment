@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class Configuration {
 
     WebDriver mydriver;
-    String runninngOption = "local";
+    String runninngOption = "LOCAL.MAC";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
@@ -21,13 +21,21 @@ public class Configuration {
     public WebDriver setUp() throws MalformedURLException {
 
 
-        if (runninngOption == "local") {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
+        if (runninngOption == "LOCAL.WIN") {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
             mydriver = new ChromeDriver();
             mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
         }
+        if (runninngOption == "LOCAL.MAC") {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+            mydriver = new ChromeDriver();
+            mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            mydriver.manage().window().maximize();
+            return mydriver;
+        }
+
         else if (runninngOption == "dockerChrome"){
             mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.chrome());
             mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
