@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.net.MalformedURLException;
 
@@ -32,20 +31,19 @@ public class DynamicControlsAsyncUITests {
     @Feature("Input Files Async")
     @Description("Mouse out of the viewport pane and see a modal window appear")
     @Test(priority = 0, description = "Mouse should get Out Of the viewport pane and see a modal window appear")
-    public void exitIntent() throws AWTException {
-
+    public void interactWithDynamicControls() throws AWTException {
 
         //Open Dynamic Controls page URL
         driver.get(dynamicControlsPagePOM.URL);
 
-        //Check that swap text box is disabled
-        dynamicControlsPagePOM.checkSwapTextboxIsDisabled();
+        //Check that enable/disable button works properly
+        dynamicControlsPagePOM.checkEnableDisableButtonWorks();
     }
 
     @Feature("Input Files Async")
     @AfterTest
     public void tearDown() {
         //Close window
-        myUIHelpers.closeWindow();
+       myUIHelpers.closeWindow();
     }
 }

@@ -14,7 +14,7 @@ public class Configuration {
     public static final int IMPLICIT_WAIT_TIME = 10;
 
     WebDriver mydriver;
-    String RUNNING_OPTION = "LOCAL.MAC";
+    String RUNNING_OPTION = "DOCKER.CHROME";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
@@ -40,7 +40,7 @@ public class Configuration {
         }
 
        if (RUNNING_OPTION == "DOCKER.CHROME"){
-            mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.chrome());
+            mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.firefox());
             mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
