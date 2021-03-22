@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Configuration {
 
+    public static final int IMPLICIT_WAIT_TIME = 10;
+
     WebDriver mydriver;
-    String runninngOption = "LOCAL.MAC";
+    String RUNNING_OPTION = "LOCAL.MAC";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
@@ -21,27 +23,27 @@ public class Configuration {
     public WebDriver setUp() throws MalformedURLException {
 
 
-        if (runninngOption == "LOCAL.WIN") {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+        if (RUNNING_OPTION == "LOCAL.WIN") {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources" +
+                    "/chromedriver.exe");
             mydriver = new ChromeDriver();
-            mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
         }
-        if (runninngOption == "LOCAL.MAC") {
+        if (RUNNING_OPTION == "LOCAL.MAC") {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
             mydriver = new ChromeDriver();
-            mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
         }
 
-        else if (runninngOption == "DOCKER.CHROME"){
+       if (RUNNING_OPTION == "DOCKER.CHROME"){
             mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.chrome());
-            mydriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
-
         }
         else{
             return mydriver;

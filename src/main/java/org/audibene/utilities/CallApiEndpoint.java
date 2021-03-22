@@ -12,6 +12,8 @@ import static org.testng.Assert.assertEquals;
 
 public class CallApiEndpoint {
 
+    public static final String JOKES_BASE_URI = "https://api.chucknorris.io/jokes";
+
     ApiHelpers apiHelpers;
 
     public CallApiEndpoint() {
@@ -20,7 +22,7 @@ public class CallApiEndpoint {
 
     public List<String> getCategories(){
 
-        RestAssured.baseURI="https://api.chucknorris.io/jokes";
+        RestAssured.baseURI= JOKES_BASE_URI;
 
         RequestSpecification  httpRequest = RestAssured.given();
 

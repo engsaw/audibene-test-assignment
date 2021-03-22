@@ -8,16 +8,16 @@ import static org.testng.Assert.assertEquals;
 public class SortingWindowPOM {
 
     private WebDriver mydriver;
-
     UIHelpers uiHelpers;
 
     String[] lastNamesArrayFromFirstTable;
     String[] firstNamesArrayFromSecondTable;
-    public static int TABLE_SIZE=4;
-    public static int LAST_NAME_COLUMN_NUMBER = 1;
-    public static int FIRST_NAME_COLUMN_NUMBER = 2;
+    public static int TABLE_SIZE=4; //number of rows in both tables are 4
+    public static int LAST_NAME_COLUMN_NUMBER = 1; //Last name is in first column
+    public static int FIRST_NAME_COLUMN_NUMBER = 2; //First name is in second column
     public static String URL = "https://the-internet.herokuapp.com/tables";
 
+    //Constructor, set the driver & instantiate utility classes
     public SortingWindowPOM(WebDriver driver) {
         this.mydriver = driver;
         this.uiHelpers = new UIHelpers(mydriver);
@@ -26,6 +26,7 @@ public class SortingWindowPOM {
     @Step("Iterate Over Last name field in all rows in first table and check they are sorted")
     public void validateLastNameFirstTableAreSorted() {
 
+        //instantiate an array to store last names from first table
         lastNamesArrayFromFirstTable = new String[TABLE_SIZE];
 
         //Iterate Over Last name field in all rows in first table
@@ -38,6 +39,8 @@ public class SortingWindowPOM {
 
     @Step("Iterate Over first name field in all rows in second table and check they are sorted")
     public void validatefirstNameSecondTableAreSorted() {
+
+        //instantiate an array to store first names from second table
         firstNamesArrayFromSecondTable = new String[TABLE_SIZE];
 
         //Iterate Over Last name field in all rows in first table

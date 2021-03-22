@@ -16,11 +16,8 @@ import java.net.MalformedURLException;
 public class SortingUITests {
 
     WebDriver driver;
-
     Configuration myConfiguration;
-
     UIHelpers myUIHelpers;
-
     SortingWindowPOM sortingPage;
 
     @BeforeTest
@@ -34,7 +31,7 @@ public class SortingUITests {
 
     @Feature("Sorting")
     @Description("Open sorting page")
-    @Test(priority = 0, description = "Login with correct user/password")
+    @Test(priority = 0, description = "Open Sorting Page")
     public void openSortingPage() {
         //Open sorting page URL
         driver.get(sortingPage.URL);
@@ -42,15 +39,15 @@ public class SortingUITests {
 
     @Feature("Sorting")
     @Description("loop through last name in first table and add them to an array of strings then validate sorting")
-    @Test(priority = 0, description = "Login with correct user/password")
+    @Test(priority = 0, description = "Should validate last Name in first table is sorted A-Z")
     public void validateLastNameFirstTableAreSorted() {
         //Validate Last names in sorting page are sorted
         sortingPage.validateLastNameFirstTableAreSorted();
     }
 
     @Feature("Sorting")
-    @Description("loop through last name in first table and add them to an array of strings then validate sorting")
-    @Test(priority = 0, description = "Login with correct user/password")
+    @Description("loop through first name in second table and add them to an array of strings then validate sorting")
+    @Test(priority = 0, description = "Should validate first Name in second table is sorted A-Z")
     public void validateFirstNameSecondTableAreSorted() {
         //Validate Last names in sorting page are sorted
         sortingPage.validatefirstNameSecondTableAreSorted();

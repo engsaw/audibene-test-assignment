@@ -15,9 +15,6 @@ public class OpenNewWindowPOM {
     public static final String NEW_WINDOW_TEXT = "New Window";
     private WebDriver mydriver;
     UIHelpers UIHelpers;
-
-
-
     public static String URL = "https://the-internet.herokuapp.com/windows";
     public static String clickHereButtonProperty = "//*[@id=\"content\"]/div/a";
     public static String newPageBodyProperty = "/html/body/div/h3";
@@ -25,19 +22,18 @@ public class OpenNewWindowPOM {
     By clickHereButton = By.xpath(clickHereButtonProperty);
     By newPageBody = By.xpath(newPageBodyProperty);
 
+    //Constructor, set the driver & instantiate utility classes
+    public OpenNewWindowPOM(WebDriver driver) {
+        this.mydriver = driver;
+        this.UIHelpers = new UIHelpers(mydriver);
+    }
 
     @Step("Click on Click Here Button")
     public void clickClickHereButton() {
         mydriver.findElement(clickHereButton).click();
     }
 
-
-
-    public OpenNewWindowPOM(WebDriver driver) {
-        this.mydriver = driver;
-        this.UIHelpers = new UIHelpers(mydriver);
-    }
-
+    //Function to switch tab based on index of the tab
     @Step("Click on Click Here Button")
     public void switchToAnotherTab(int tabIndex) {
         List<String> browserTabs = new ArrayList<String>(mydriver.getWindowHandles());

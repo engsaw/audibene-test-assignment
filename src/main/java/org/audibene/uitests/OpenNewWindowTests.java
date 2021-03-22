@@ -20,6 +20,7 @@ public class OpenNewWindowTests {
     UIHelpers myUIHelpers;
     OpenNewWindowPOM openNewWindowPOM;
 
+    @Feature("Open popup Window window ;)")
     @BeforeTest
     public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
@@ -29,9 +30,9 @@ public class OpenNewWindowTests {
 
     }
 
-    @Feature("Open New Window window ;)")
-    @Description("test that the click opens a new browser-tab or new window")
-    @Test(priority = 0, description = "test that the click opens a new browser-tab or new window")
+    @Feature("Open popup Window window ;)")
+    @Description("Test that the click opens a new browser-tab or new window")
+    @Test(priority = 0, description = "Should click opens a new browser-tab or new window")
     public void openNewWindowPage() {
         //Create an instance of Open New Page object model
         driver.get(openNewWindowPOM.URL);
@@ -52,6 +53,7 @@ public class OpenNewWindowTests {
 
     }
 
+    @Feature("Open popup Window window ;)")
     @AfterTest
     public void tearDown() {
         //Close window

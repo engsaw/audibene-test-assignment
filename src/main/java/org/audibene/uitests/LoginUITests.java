@@ -18,6 +18,7 @@ public class LoginUITests {
     UIHelpers myUIHelpers;
     LoginPagePOM loginPage;
 
+    @Feature("Login")
     @BeforeTest
     public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
@@ -29,7 +30,7 @@ public class LoginUITests {
 
     @Feature("Login")
     @Description("Provide correct password and check the results")
-    @Test(priority = 0, description = "Login with correct user/password")
+    @Test(priority = 0, description = "Should login with correct user/password successfully")
     public void loginSuccessfully() {
         //Open Login page URL
         driver.get(loginPage.loginPageURL);
@@ -43,7 +44,7 @@ public class LoginUITests {
 
     @Feature("Login")
     @Description("Provide wrong password and check the results")
-    @Test(priority = 1, description = "Login with wrong user/password")
+    @Test(priority = 1, description = "Should fail to login with wrong user/password")
     public void loginUnSuccessfully() {
 
         //Create an instance of Login Page object model
@@ -59,6 +60,7 @@ public class LoginUITests {
         loginPage.validateUnSuccessfulLogin();
     }
 
+    @Feature("Login")
     @AfterTest
     public void tearDown() {
         //Close window

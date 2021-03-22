@@ -18,7 +18,8 @@ public class ExitIntentUITests {
     UIHelpers myUIHelpers;
     ExitIntentPagePOM exitIntentPage;
 
-    @BeforeTest
+    @Feature("Exit Intent Page")
+    @BeforeTest()
     public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
@@ -29,7 +30,7 @@ public class ExitIntentUITests {
 
     @Feature("Exit Intent Page")
     @Description("Mouse out of the viewport pane and see a modal window appear")
-    @Test(priority = 0, description = "Mouse out of the viewport pane and see a modal window appear")
+    @Test(priority = 0, description = "Mouse should get Out Of the viewport pane and see a modal window appear")
     public void exitIntent() throws AWTException {
 
 
@@ -47,6 +48,7 @@ public class ExitIntentUITests {
 
     }
 
+    @Feature("Exit Intent Page")
     @AfterTest
     public void tearDown() {
         //Close window
