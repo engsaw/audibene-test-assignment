@@ -2,8 +2,7 @@ package org.audibene.uitests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
-import org.audibene.pom.LoginPagePOM;
-import org.audibene.pom.SortingWindowPOM;
+import org.audibene.pom.SortingPagePOM;
 import org.audibene.utilities.Configuration;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +17,7 @@ public class SortingUITests {
     WebDriver driver;
     Configuration myConfiguration;
     UIHelpers myUIHelpers;
-    SortingWindowPOM sortingPage;
+    SortingPagePOM sortingPage;
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
@@ -26,7 +25,7 @@ public class SortingUITests {
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
         //Create an instance of sorting  Page object model
-        sortingPage = new SortingWindowPOM(this.driver);
+        sortingPage = new SortingPagePOM(this.driver);
     }
 
     @Feature("Sorting")

@@ -5,7 +5,7 @@ import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 
-public class SortingWindowPOM {
+public class SortingPagePOM {
 
     private WebDriver mydriver;
     UIHelpers uiHelpers;
@@ -18,7 +18,7 @@ public class SortingWindowPOM {
     public static String URL = "https://the-internet.herokuapp.com/tables";
 
     //Constructor, set the driver & instantiate utility classes
-    public SortingWindowPOM(WebDriver driver) {
+    public SortingPagePOM(WebDriver driver) {
         this.mydriver = driver;
         this.uiHelpers = new UIHelpers(mydriver);
     }

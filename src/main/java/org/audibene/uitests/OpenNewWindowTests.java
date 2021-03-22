@@ -2,7 +2,7 @@ package org.audibene.uitests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
-import org.audibene.pom.OpenNewWindowPOM;
+import org.audibene.pom.OpenNewPagePOM;
 import org.audibene.utilities.Configuration;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,7 @@ public class OpenNewWindowTests {
     WebDriver driver;
     Configuration myConfiguration;
     UIHelpers myUIHelpers;
-    OpenNewWindowPOM openNewWindowPOM;
+    OpenNewPagePOM openNewWindowPOM;
 
     @Feature("Open popup Window window ;)")
     @BeforeTest
@@ -26,7 +26,7 @@ public class OpenNewWindowTests {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
-        openNewWindowPOM = new OpenNewWindowPOM(this.driver);
+        openNewWindowPOM = new OpenNewPagePOM(this.driver);
 
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class OpenNewWindowPOM {
+public class OpenNewPagePOM {
 
     public static final String NEW_WINDOW_TEXT = "New Window";
     private WebDriver mydriver;
@@ -23,7 +23,7 @@ public class OpenNewWindowPOM {
     By newPageBody = By.xpath(newPageBodyProperty);
 
     //Constructor, set the driver & instantiate utility classes
-    public OpenNewWindowPOM(WebDriver driver) {
+    public OpenNewPagePOM(WebDriver driver) {
         this.mydriver = driver;
         this.UIHelpers = new UIHelpers(mydriver);
     }

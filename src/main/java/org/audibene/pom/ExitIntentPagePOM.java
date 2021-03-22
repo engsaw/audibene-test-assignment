@@ -14,7 +14,7 @@ public class ExitIntentPagePOM {
     UIHelpers UIHelpers;
 
     public static String pageTitle = "The Internet";
-    public static String exitIntentPageURL = "https://the-internet.herokuapp.com/exit_intent";
+    public static String URL = "https://the-internet.herokuapp.com/exit_intent";
     public static String ouibounceModalProperty = "//*[@id=\"ouibounce-modal\"]/div[2]";
     public static String ouibounceModalDivTitleProperty = "//*[@id=\"ouibounce-modal\"]/div[2]/div[1]/h3";
     public static String ouibounceModalDivTitleText = "THIS IS A MODAL WINDOW";
