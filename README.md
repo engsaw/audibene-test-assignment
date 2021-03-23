@@ -58,9 +58,3 @@ Grid Node with Chrome installed, selenium/node-firefox
 
 ![docker_Run1](https://user-images.githubusercontent.com/30292596/112179980-6efc1b00-8bfb-11eb-87f0-5b41eb79b59b.gif)
 
-## Project structure
-Tests are separated as per feature & nature (UI & API tests) , for each test there is a test class, the test class is calling functions from a page object model class and some other  utility classes to achieve a better organisation and code reusability.
-
-Execution options can be adjusted inside a Configuration class, which should handle all the global properties for the project.
-
-Reporting is based on allure which provide a detailed reporting system, this can include adding screenshots and log files to the test execution record. 
