@@ -3,16 +3,10 @@ package org.audibene.pom;
 import io.qameta.allure.Step;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
-import static org.testng.Assert.assertEquals;
+
 import static org.testng.Assert.assertTrue;
 
 public class SortingPagePOM {
-
-    UIHelpers uiHelpers;
-
-    String[] lastNamesArrayFromFirstTable;
-
-    String[] firstNamesArrayFromSecondTable;
 
     public static int TABLE_SIZE = 4; //number of rows in both tables are 4
 
@@ -21,6 +15,12 @@ public class SortingPagePOM {
     public static int FIRST_NAME_COLUMN_NUMBER = 2; //First name is in second column
 
     public static String URL = "https://the-internet.herokuapp.com/tables";
+
+    UIHelpers uiHelpers;
+
+    String[] lastNamesArrayFromFirstTable;
+
+    String[] firstNamesArrayFromSecondTable;
 
     //Constructor, set the driver & instantiate utility classes
     public SortingPagePOM(WebDriver driver) {

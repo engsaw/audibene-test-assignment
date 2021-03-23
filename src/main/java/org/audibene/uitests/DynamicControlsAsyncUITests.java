@@ -23,7 +23,7 @@ public class DynamicControlsAsyncUITests {
 
     DynamicControlsPagePOM dynamicControlsPagePOM;
 
-    @Feature("Exit Intent Page")
+    @Feature("Dynamic Controls Async Feature")
     @BeforeTest()
     public void setUp() throws MalformedURLException {
         myConfiguration = new Configuration(driver);
@@ -33,7 +33,7 @@ public class DynamicControlsAsyncUITests {
         dynamicControlsPagePOM = new DynamicControlsPagePOM(this.driver);
     }
 
-    @Feature("Input Files Async")
+    @Feature("Dynamic Controls Async Feature")
     @Description("Mouse out of the viewport pane and see a modal window appear")
     @Test(priority = 0, description = "Mouse should get Out Of the viewport pane and see a modal window appear")
     public void interactWithDynamicControls() throws AWTException {
@@ -45,7 +45,7 @@ public class DynamicControlsAsyncUITests {
         dynamicControlsPagePOM.checkEnableDisableButtonWorks();
     }
 
-    @Feature("Input Files Async")
+    @Feature("Dynamic Controls Async Feature")
     @AfterTest
     public void tearDown() {
         //Close window

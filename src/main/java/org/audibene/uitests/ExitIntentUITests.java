@@ -2,12 +2,13 @@ package org.audibene.uitests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import org.audibene.pom.ExitIntentPagePOM;
+import org.audibene.utilities.Configuration;
+import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.audibene.utilities.*;
-import org.audibene.pom.ExitIntentPagePOM;
 
 import java.awt.*;
 import java.net.MalformedURLException;
@@ -48,7 +49,6 @@ public class ExitIntentUITests {
 
         //Close intent window
         exitIntentPagePOM.closeModalWindow();
-
     }
 
     @Feature("Exit Intent Page")

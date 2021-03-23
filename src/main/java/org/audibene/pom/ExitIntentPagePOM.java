@@ -4,16 +4,14 @@ import io.qameta.allure.Step;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
+
 import static org.awaitility.Awaitility.await;
 import static org.testng.Assert.assertEquals;
 
 public class ExitIntentPagePOM {
-
-    private final WebDriver mydriver;
-
-    UIHelpers UIHelpers;
 
     public static String pageTitle = "The Internet";
 
@@ -29,6 +27,10 @@ public class ExitIntentPagePOM {
 
     public static String pageContentProperty = "//*[@id=\"content\"]/div[1]/h3";
 
+    private final WebDriver mydriver;
+
+    UIHelpers UIHelpers;
+
     By ouibounceModal = By.xpath(ouibounceModalProperty);
 
     By ouibounceModalDivTitle = By.xpath(ouibounceModalDivTitleProperty);
@@ -36,6 +38,11 @@ public class ExitIntentPagePOM {
     By closeBtn = By.xpath(closeBtnProperty);
 
     By pageContent = By.xpath(pageContentProperty);
+
+    public ExitIntentPagePOM(WebDriver driver) {
+        this.mydriver = driver;
+        this.UIHelpers = new UIHelpers(mydriver);
+    }
 
     @Step("Move mouse out of view port at 0,0")
     public void moveMouseOutOFViewPort() throws AWTException {
@@ -56,11 +63,6 @@ public class ExitIntentPagePOM {
     @Step("Close the Model window")
     public void closeModalWindow() {
         mydriver.findElement(closeBtn).click();
-    }
-
-    public ExitIntentPagePOM(WebDriver driver) {
-        this.mydriver = driver;
-        this.UIHelpers = new UIHelpers(mydriver);
     }
 
 }

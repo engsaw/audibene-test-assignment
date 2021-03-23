@@ -15,10 +15,6 @@ public class LoginPagePOM {
         complete javadocs and documentation
     */
 
-    private final WebDriver mydriver;
-
-    UIHelpers UIHelpers;
-
     public static String userNameTxtboxProperty = "//*[@id=\"username\"]";
 
     public static String passwordTxtboxProperty = "//*[@id=\"password\"]";
@@ -41,6 +37,10 @@ public class LoginPagePOM {
 
     public static String loginPageURL = "https://the-internet.herokuapp.com/login";
 
+    private final WebDriver mydriver;
+
+    UIHelpers UIHelpers;
+
     By userNameTxtbox = By.xpath(userNameTxtboxProperty);
 
     By passwordTxtbox = By.xpath(passwordTxtboxProperty);
@@ -48,6 +48,13 @@ public class LoginPagePOM {
     By loginBtn = By.xpath(loginBtnProperty);
 
     By loggedInFlash = By.xpath(loggedInFlashProperty);
+
+    //Constructor which takes the WebDriver as input
+    //@param Webdriver
+    public LoginPagePOM(WebDriver driver) {
+        this.mydriver = driver;
+        this.UIHelpers = new UIHelpers(mydriver);
+    }
 
     @Step("Login Step with username : {0} , password : {1} ")
     public void login(String username, String password) {
@@ -68,13 +75,6 @@ public class LoginPagePOM {
     public void validateUnSuccessfulLogin() {
         assertTrue(mydriver.findElement(loggedInFlash).getText().contains(unSuccessfulLoggedInFlashTxt));
         UIHelpers.takeScreenshot(mydriver);
-    }
-
-    //Constructor which takes the WebDriver as input
-    //@param Webdriver
-    public LoginPagePOM(WebDriver driver) {
-        this.mydriver = driver;
-        this.UIHelpers = new UIHelpers(mydriver);
     }
 
 }

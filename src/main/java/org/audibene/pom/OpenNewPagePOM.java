@@ -4,25 +4,25 @@ import io.qameta.allure.Step;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class OpenNewPagePOM {
 
     public static final String NEW_WINDOW_TEXT = "New Window";
-
-    private final WebDriver mydriver;
-
-    UIHelpers UIHelpers;
 
     public static String URL = "https://the-internet.herokuapp.com/windows";
 
     public static String clickHereButtonProperty = "//*[@id=\"content\"]/div/a";
 
     public static String newPageBodyProperty = "/html/body/div/h3";
+
+    private final WebDriver mydriver;
+
+    UIHelpers UIHelpers;
 
     By clickHereButton = By.xpath(clickHereButtonProperty);
 

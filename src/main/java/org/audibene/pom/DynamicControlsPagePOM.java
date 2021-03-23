@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import static org.awaitility.Awaitility.await;
@@ -19,10 +18,6 @@ public class DynamicControlsPagePOM {
 
     public static final String INPUT_TEXT = "Sherif";
 
-    private final WebDriver mydriver;
-
-    UIHelpers UIHelpers;
-
     public static String pageTitle = "The Internet";
 
     public static String URL = "https://the-internet.herokuapp.com/dynamic_controls";
@@ -33,11 +28,20 @@ public class DynamicControlsPagePOM {
 
     public static String enableDisableLabelProperty = "//*[@id=\"message\"]";
 
+    private final WebDriver mydriver;
+
+    UIHelpers UIHelpers;
+
     By swapButton = By.xpath(swapButtonProperty);
 
     By swapTextbox = By.xpath(swapTextboxProperty);
 
     By enableDisableLabel = By.xpath(enableDisableLabelProperty);
+
+    public DynamicControlsPagePOM(WebDriver driver) {
+        this.mydriver = driver;
+        this.UIHelpers = new UIHelpers(mydriver);
+    }
 
     @Step("")
     public void checkEnableDisableButtonWorks() {
@@ -70,12 +74,6 @@ public class DynamicControlsPagePOM {
 
         //Check the value of input field
         assertEquals(inputTextField.getAttribute("value"), INPUT_TEXT);
-
-    }
-
-    public DynamicControlsPagePOM(WebDriver driver) {
-        this.mydriver = driver;
-        this.UIHelpers = new UIHelpers(mydriver);
     }
 
 }

@@ -3,8 +3,8 @@ package org.audibene.apitests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.audibene.utilities.ApiHelpers;
-import org.audibene.utilities.Configuration;
 import org.audibene.utilities.CallApiEndpoint;
+import org.audibene.utilities.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -38,7 +38,6 @@ public class GetCategoriesTests {
         //["animal","career","celebrity","dev","explicit","fashion","food","history","money","movie","music",
         // "political","religion","science","sport","travel"]
         listOfCategories = callApiEndpoint.getCategories();
-
     }
 
     //Iterate over each category name (e. animal, sport, etc..)  and use it as a parameter to get content of jokes 

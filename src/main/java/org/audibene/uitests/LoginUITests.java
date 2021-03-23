@@ -2,13 +2,13 @@ package org.audibene.uitests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
+import org.audibene.pom.LoginPagePOM;
 import org.audibene.utilities.Configuration;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.audibene.pom.LoginPagePOM;
 
 import java.net.MalformedURLException;
 
@@ -28,14 +28,16 @@ public class LoginUITests {
         myConfiguration = new Configuration(driver);
         driver = myConfiguration.setUp();
         myUIHelpers = new UIHelpers(driver);
-        //Create an instance of Login Page object model
-        loginPage = new LoginPagePOM(this.driver);
     }
 
     @Feature("Login")
     @Description("Provide correct password and check the results")
     @Test(priority = 0, description = "Should login with correct user/password successfully")
     public void loginSuccessfully() {
+
+        //Create an instance of Login Page object model
+        loginPage = new LoginPagePOM(this.driver);
+
         //Open Login page URL
         driver.get(LoginPagePOM.loginPageURL);
 
