@@ -49,6 +49,8 @@ Grid Node with Chrome installed, selenium/node-firefox
 #### Set up infrastructure using docker-compose
 > $ docker-compose -f docker-compose.yml up -d
 
+![docker_Run1](https://user-images.githubusercontent.com/30292596/112179980-6efc1b00-8bfb-11eb-87f0-5b41eb79b59b.gif)
+
 ## Project structure
 Tests are separated as per feature & nature (UI & API tests) , for each test there is a test class, the test class is calling functions from a page object model class and some other  utility classes to achieve a better organisation and code reusability.
 
