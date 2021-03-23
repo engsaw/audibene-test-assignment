@@ -1,5 +1,12 @@
 # Internet World Test Assignment
 
+## General Information & Project structure
+Tests are separated as per feature & nature (UI & API tests) , for each test there is a test class, the test class is calling functions from a page object model class and some other  utility classes to achieve a better organisation and code reusability.
+
+Execution options can be adjusted inside a Configuration class, which should handle all the global properties for the project.
+
+Reports are generated using "allure" which provides a detailed reporting system, this include adding screenshots and log files to the test execution record. 
+
 
 ## Environment Setup
 
