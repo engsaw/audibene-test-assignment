@@ -1,24 +1,29 @@
-# Internet Wordl Test Assignment
+# Internet World Test Assignment
 
 
 
-mvn clean test
+### Run the tests
+> $ mvn clean test
 
-Using docker to run 
-1. install docker https://docs.docker.com/desktop/
+### Generate allure reports
+> $ mvn allure:serve
+![Allure Report](https://github.com/engsaw/audibene-test-assignment/blob/master/src/test/resources/allure_report.png)
 
-Pull the following docker images:
+### Using docker to run 
+install docker https://docs.docker.com/desktop/
+
+#### Pull the following docker images:
+
 selenium/hub
-$ docker pull selenium/hub
-Image for running Grid Hub
-selenium/node-chrome
-$ docker pull selenium/node-chrome
-Grid Node with Chrome installed, needs to be connected to a Grid Hub
-selenium/node-firefox
-$ docker pull selenium/node-firefox
+> $ docker pull selenium/hub
+> 
+Image for running Grid Hub selenium/node-chrome
+> $ docker pull selenium/node-chrome
 
-2. Set up infrastructure using docker-compose
-docker-compose -f /path/to/docker-compose.yml up -d
+Grid Node with Chrome installed, selenium/node-firefox
+> $ docker pull selenium/node-firefox
 
-Generate allure reports
-mvn allure:serve
+#### Set up infrastructure using docker-compose
+> $ docker-compose -f docker-compose.yml up -d
+
+
