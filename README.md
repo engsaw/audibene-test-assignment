@@ -20,6 +20,8 @@ String RUNNING_OPTION = "DOCKER.CHROME";
 ### Run the tests
 > $ mvn clean test
 
+![Test_Execution_Internet_Challenge](https://user-images.githubusercontent.com/30292596/112163315-33f2eb00-8bed-11eb-9c6a-964a27ca5bbb.gif)
+
 ### Generate allure reports
 > $ allure serve allure-result/
 ![Allure Report](https://github.com/engsaw/audibene-test-assignment/blob/master/src/test/resources/allure_report.png)
