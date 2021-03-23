@@ -10,6 +10,7 @@ Install allure reporting generation tool from [here](https://docs.qameta.io/allu
 
 Install JDK 
 
+Close the repo
 > $ gh repo clone engsaw/audibene-test-assignment
 
 ### Configuration
