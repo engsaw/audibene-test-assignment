@@ -1,5 +1,12 @@
 # Internet World Test Assignment
 
+## General Information & Project structure
+Tests are separated as per feature & nature (UI & API tests) , for each test there is a test class, the test class is calling functions from a page object model class and some other  utility classes to achieve a better organisation and code reusability.
+
+Execution options can be adjusted inside a Configuration class, which should handle all the global properties for the project.
+
+Reports are generated using "allure" which provides a detailed reporting system, this include adding screenshots and log files to the test execution record. 
+
 
 ## Environment Setup
 
@@ -9,6 +16,9 @@ Install maven from [here](https://maven.apache.org/install.html)
 Install allure reporting generation tool from [here](https://docs.qameta.io/allure/)
 
 Install JDK 
+
+Close the repo
+> $ gh repo clone engsaw/audibene-test-assignment
 
 ### Configuration
 Test can be executed on chrome driver or on docker, to switch between both the following property in [Configuration](https://github.com/engsaw/audibene-test-assignment/blob/master/src/main/java/org/audibene/utilities/Configuration.java) class needs to be set
@@ -46,9 +56,5 @@ Grid Node with Chrome installed, selenium/node-firefox
 #### Set up infrastructure using docker-compose
 > $ docker-compose -f docker-compose.yml up -d
 
-## Project structure
-Tests are separated as per feature & nature (UI & API tests) , for each test there is a test class, the test class is calling functions from a page object model class and some other  utility classes to achieve a better organisation and code reusability.
+![docker_Run1](https://user-images.githubusercontent.com/30292596/112179980-6efc1b00-8bfb-11eb-87f0-5b41eb79b59b.gif)
 
-Execution options can be adjusted inside a Configuration class, which should handle all the global properties for the project.
-
-Reporting is based on allure which provide a detailed reporting system, this can include adding screenshots and log files to the test execution record. 
