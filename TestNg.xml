@@ -31,4 +31,10 @@
             <class name="org.audibene.uitests.OpenNewWindowTests"/>
         </classes>
     </test>
+
+    <test name="Dynamic Controls UI Tests">
+        <classes>
+            <class name="org.audibene.uitests.DynamicControlsAsyncUITests"/>
+        </classes>
+    </test>
 </suite>

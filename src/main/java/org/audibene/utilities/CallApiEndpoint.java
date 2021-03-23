@@ -20,31 +20,31 @@ public class CallApiEndpoint {
         this.apiHelpers = new ApiHelpers();
     }
 
-    public List<String> getCategories(){
+    public List<String> getCategories() {
 
-        RestAssured.baseURI= JOKES_BASE_URI;
+        RestAssured.baseURI = JOKES_BASE_URI;
 
-        RequestSpecification  httpRequest = RestAssured.given();
+        RequestSpecification httpRequest = RestAssured.given();
 
-        Response response = httpRequest.request(Method.GET,"/categories");
+        Response response = httpRequest.request(Method.GET, "/categories");
 
-        assertEquals (response.statusCode(),200);
+        assertEquals(response.statusCode(), 200);
 
         List<String> jsonResponse = response.jsonPath().getList("$");
 
-        return  jsonResponse;
+        return jsonResponse;
     }
 
     @Step("Get Jokes For the category : {0}")
-    public Response getJokesForSpecificCategory(String category){
+    public Response getJokesForSpecificCategory(String category) {
         RequestSpecification getJokesHttpRequest = RestAssured.given();
-        getJokesHttpRequest.queryParam("query",category);
-        Response getJokesResponse = getJokesHttpRequest.request(Method.GET,"/search");
+        getJokesHttpRequest.queryParam("query", category);
+        Response getJokesResponse = getJokesHttpRequest.request(Method.GET, "/search");
         return getJokesResponse;
     }
 
-    @Step ("Validate Jokes For the category : {1} ")
-    public  void validateJokesForSpecificCategory(String jokesContent, String category){
+    @Step("Validate Jokes For the category : {1} ")
+    public void validateJokesForSpecificCategory(String jokesContent, String category) {
         assertEquals(jokesContent, apiHelpers.readJsonFixtures(category));
     }
 }

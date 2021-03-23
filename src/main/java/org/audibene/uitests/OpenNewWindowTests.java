@@ -12,12 +12,14 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-
 public class OpenNewWindowTests {
 
     WebDriver driver;
+
     Configuration myConfiguration;
+
     UIHelpers myUIHelpers;
+
     OpenNewPagePOM openNewWindowPOM;
 
     @Feature("Open popup Window window ;)")
@@ -35,12 +37,10 @@ public class OpenNewWindowTests {
     @Test(priority = 0, description = "Should click opens a new browser-tab or new window")
     public void openNewWindowPage() {
         //Create an instance of Open New Page object model
-        driver.get(openNewWindowPOM.URL);
-
+        driver.get(OpenNewPagePOM.URL);
 
         //Click on Click here button to open a new page
         openNewWindowPOM.clickClickHereButton();
-
 
         //Switch to new Tab
         openNewWindowPOM.switchToAnotherTab(1);

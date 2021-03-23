@@ -40,7 +40,7 @@ public class UIHelpers {
 
     public String[] iterateOverFirstTableCollectLastName(int tableSize, int column,
                                                          String[] lastNamesArrayFromFirstTable) {
-        for (int i = 1; i < tableSize+1; i++) {
+        for (int i = 1; i < tableSize + 1; i++) {
             lastNamesArrayFromFirstTable[i - 1] = mydriver.findElement(By.xpath(String.format("//*[@id=\"table1" +
                     "\"]/tbody/tr[%2d]/td[%2d]", i, column))).getText();
         }
@@ -48,8 +48,8 @@ public class UIHelpers {
     }
 
     public String[] iterateOverSecondTableCollectFirstName(int tableSize, int column,
-                                                         String[] firstNamesArrayFromSecondTable) {
-        for (int i = 1; i < tableSize+1; i++) {
+                                                           String[] firstNamesArrayFromSecondTable) {
+        for (int i = 1; i < tableSize + 1; i++) {
             firstNamesArrayFromSecondTable[i - 1] = mydriver.findElement(By.xpath(String.format("//*[@id=\"table2" +
                     "\"]/tbody/tr[%2d]/td[%2d]", i, column))).getText();
         }

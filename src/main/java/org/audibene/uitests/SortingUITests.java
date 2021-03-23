@@ -15,8 +15,11 @@ import java.net.MalformedURLException;
 public class SortingUITests {
 
     WebDriver driver;
+
     Configuration myConfiguration;
+
     UIHelpers myUIHelpers;
+
     SortingPagePOM sortingPage;
 
     @BeforeTest
@@ -33,7 +36,7 @@ public class SortingUITests {
     @Test(priority = 0, description = "Open Sorting Page")
     public void openSortingPage() {
         //Open sorting page URL
-        driver.get(sortingPage.URL);
+        driver.get(SortingPagePOM.URL);
     }
 
     @Feature("Sorting")

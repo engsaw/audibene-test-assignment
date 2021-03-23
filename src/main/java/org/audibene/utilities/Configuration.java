@@ -14,7 +14,8 @@ public class Configuration {
     public static final int IMPLICIT_WAIT_TIME = 10;
 
     WebDriver mydriver;
-    String RUNNING_OPTION = "DOCKER.CHROME";
+
+    String RUNNING_OPTION = "LOCAL.MAC";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
@@ -22,8 +23,7 @@ public class Configuration {
 
     public WebDriver setUp() throws MalformedURLException {
 
-
-        if (RUNNING_OPTION == "LOCAL.WIN") {
+        if (RUNNING_OPTION.equals("LOCAL.WIN")) {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources" +
                     "/chromedriver.exe");
             mydriver = new ChromeDriver();
@@ -31,21 +31,21 @@ public class Configuration {
             mydriver.manage().window().maximize();
             return mydriver;
         }
-        if (RUNNING_OPTION == "LOCAL.MAC") {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+        if (RUNNING_OPTION.equals("LOCAL.MAC")) {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources" +
+                    "/chromedriver");
             mydriver = new ChromeDriver();
             mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
         }
 
-       if (RUNNING_OPTION == "DOCKER.CHROME"){
+        if (RUNNING_OPTION.equals("DOCKER.CHROME")) {
             mydriver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.firefox());
             mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
             return mydriver;
-        }
-        else{
+        } else {
             return mydriver;
         }
 

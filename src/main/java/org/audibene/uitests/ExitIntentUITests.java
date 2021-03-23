@@ -13,9 +13,13 @@ import java.awt.*;
 import java.net.MalformedURLException;
 
 public class ExitIntentUITests {
+
     public WebDriver driver;
+
     Configuration myConfiguration;
+
     UIHelpers myUIHelpers;
+
     ExitIntentPagePOM exitIntentPagePOM;
 
     @Feature("Exit Intent Page")
@@ -32,7 +36,6 @@ public class ExitIntentUITests {
     @Description("Mouse out of the viewport pane and see a modal window appear")
     @Test(priority = 0, description = "Mouse should get Out Of the viewport pane and see a modal window appear")
     public void exitIntent() throws AWTException {
-
 
         //Open exitIntentPage page URL
         driver.get(ExitIntentPagePOM.URL);

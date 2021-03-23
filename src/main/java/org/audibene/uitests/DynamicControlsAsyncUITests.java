@@ -9,13 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import java.awt.*;
 import java.net.MalformedURLException;
 
 public class DynamicControlsAsyncUITests {
+
     public WebDriver driver;
+
     Configuration myConfiguration;
+
     UIHelpers myUIHelpers;
+
     DynamicControlsPagePOM dynamicControlsPagePOM;
 
     @Feature("Exit Intent Page")
@@ -34,7 +39,7 @@ public class DynamicControlsAsyncUITests {
     public void interactWithDynamicControls() throws AWTException {
 
         //Open Dynamic Controls page URL
-        driver.get(dynamicControlsPagePOM.URL);
+        driver.get(DynamicControlsPagePOM.URL);
 
         //Check that enable/disable button works properly
         dynamicControlsPagePOM.checkEnableDisableButtonWorks();
@@ -44,6 +49,6 @@ public class DynamicControlsAsyncUITests {
     @AfterTest
     public void tearDown() {
         //Close window
-       myUIHelpers.closeWindow();
+        myUIHelpers.closeWindow();
     }
 }

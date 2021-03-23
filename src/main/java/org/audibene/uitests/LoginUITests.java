@@ -13,9 +13,13 @@ import org.audibene.pom.LoginPagePOM;
 import java.net.MalformedURLException;
 
 public class LoginUITests {
+
     WebDriver driver;
+
     Configuration myConfiguration;
+
     UIHelpers myUIHelpers;
+
     LoginPagePOM loginPage;
 
     @Feature("Login")
@@ -33,10 +37,10 @@ public class LoginUITests {
     @Test(priority = 0, description = "Should login with correct user/password successfully")
     public void loginSuccessfully() {
         //Open Login page URL
-        driver.get(loginPage.loginPageURL);
+        driver.get(LoginPagePOM.loginPageURL);
 
         //Login using correct user/pass
-        loginPage.login(loginPage.correctUserName, loginPage.correctPassword);
+        loginPage.login(LoginPagePOM.correctUserName, LoginPagePOM.correctPassword);
 
         //Validate we logged in successfully
         loginPage.validateSuccessfulLogin();
@@ -51,10 +55,10 @@ public class LoginUITests {
         LoginPagePOM loginPage = new LoginPagePOM(this.driver);
 
         //Open Login page URL
-        driver.get(loginPage.loginPageURL);
+        driver.get(LoginPagePOM.loginPageURL);
 
         //Login using correct user/pass
-        loginPage.login(loginPage.wrongUserName, loginPage.wrongPassword);
+        loginPage.login(LoginPagePOM.wrongUserName, LoginPagePOM.wrongPassword);
 
         //Validate we logged in successfully
         loginPage.validateUnSuccessfulLogin();
