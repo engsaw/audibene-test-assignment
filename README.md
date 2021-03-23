@@ -4,8 +4,11 @@
 ## Environment Setup
 
 ### Dependancies
-Install maven from [here](https://maven.apache.org/install.html) 
+Install maven from [here](https://maven.apache.org/install.html)
+
 Install allure reporting generation tool from [here](https://docs.qameta.io/allure/)
+
+Install JDK 
 
 ### Configuration
 Test can be executed on chrome driver or on docker, to switch between both the following property in [Configuration](https://github.com/engsaw/audibene-test-assignment/blob/master/src/main/java/org/audibene/utilities/Configuration.java) class needs to be set
