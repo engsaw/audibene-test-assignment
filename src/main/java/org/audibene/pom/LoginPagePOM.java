@@ -10,7 +10,12 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginPagePOM {
 
-    private WebDriver mydriver;
+    /* TODO add more assertion to check elements inside the page
+        improve tests with async conditions
+        complete javadocs and documentation
+    */
+
+    private final WebDriver mydriver;
 
     UIHelpers UIHelpers;
 
@@ -49,22 +54,24 @@ public class LoginPagePOM {
         mydriver.findElement(userNameTxtbox).sendKeys(username);
         mydriver.findElement(passwordTxtbox).sendKeys(password);
         mydriver.findElement(loginBtn).click();
-
     }
 
+    //Validate successfull login by checking the flash label in green
     @Step("validate Successful Login")
     public void validateSuccessfulLogin() {
         assertEquals(mydriver.findElement(loggedInFlash).getText(), successfulLoggedInFlashTxt);
         UIHelpers.takeScreenshot(mydriver);
-
     }
 
+    //Validate unsuccessfull login by checking the flash label in red
     @Step("validate UnSuccessful Login")
     public void validateUnSuccessfulLogin() {
         assertTrue(mydriver.findElement(loggedInFlash).getText().contains(unSuccessfulLoggedInFlashTxt));
         UIHelpers.takeScreenshot(mydriver);
     }
 
+    //Constructor which takes the WebDriver as input
+    //@param Webdriver
     public LoginPagePOM(WebDriver driver) {
         this.mydriver = driver;
         this.UIHelpers = new UIHelpers(mydriver);

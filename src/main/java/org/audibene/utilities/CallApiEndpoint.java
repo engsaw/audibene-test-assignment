@@ -12,6 +12,8 @@ import static org.testng.Assert.assertEquals;
 
 public class CallApiEndpoint {
 
+    //TODO enhance class naming convention
+
     public static final String JOKES_BASE_URI = "https://api.chucknorris.io/jokes";
 
     ApiHelpers apiHelpers;

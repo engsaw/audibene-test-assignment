@@ -11,6 +11,8 @@ public class ApiHelpers {
     }
 
     //function that reads the json fixtures for jokes categories and return the contents
+    // @param the jokes category name (sports, animal, etc.)
+    // TODO enhance variable names
     public String readJsonFixtures(String jokesCategoryName) {
         Path jsonFixturePath =
                 Paths.get(System.getProperty("user.dir") + "/src/main/java/fixtures/" + jokesCategoryName + ".json");
