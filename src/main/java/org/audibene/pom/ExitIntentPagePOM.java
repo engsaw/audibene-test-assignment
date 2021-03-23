@@ -4,10 +4,8 @@ import io.qameta.allure.Step;
 import org.audibene.utilities.UIHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
-
 import static org.awaitility.Awaitility.await;
 import static org.testng.Assert.assertEquals;
 
@@ -43,14 +41,13 @@ public class ExitIntentPagePOM {
     public void moveMouseOutOFViewPort() throws AWTException {
         Robot robot = new Robot();
         await().atMost(3, TimeUnit.SECONDS).until(mydriver.findElement(pageContent)::isEnabled);
-        robot.mouseMove(600, -1);
+        robot.mouseMove(0, 0);
         robot.mouseMove(100, 100);
-        robot.mouseMove(600, -1);
+        robot.mouseMove(0, 0);
     }
 
     @Step("Check For Modal Window existance and Check Title content")
     public void checkForModalWindow() {
-
         mydriver.findElement(ouibounceModal).click();
         UIHelpers.takeScreenshot(mydriver);
         assertEquals(mydriver.findElement(ouibounceModalDivTitle).getText(), ouibounceModalDivTitleText);
@@ -62,7 +59,6 @@ public class ExitIntentPagePOM {
     }
 
     public ExitIntentPagePOM(WebDriver driver) {
-
         this.mydriver = driver;
         this.UIHelpers = new UIHelpers(mydriver);
     }

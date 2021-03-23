@@ -39,7 +39,6 @@ public class SortingPagePOM {
 
         //Check that the last names from first table array is sorted
         assertTrue(uiHelpers.isNameArraySortedAZ(lastNamesArrayFromFirstTable));
-
     }
 
     @Step("Iterate Over first name field in all rows in second table and check they are sorted")
