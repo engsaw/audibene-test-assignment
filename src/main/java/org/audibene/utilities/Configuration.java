@@ -15,7 +15,7 @@ public class Configuration {
 
     WebDriver mydriver;
 
-    String RUNNING_OPTION = "LOCAL.MAC";
+    String RUNNING_OPTION = "DOCKER.CHROME";
 
     public Configuration(WebDriver driver) {
         this.mydriver = driver;
