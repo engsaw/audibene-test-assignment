@@ -41,7 +41,6 @@ public class Configuration {
         }
 
         if (RUNNING_OPTION.equals("DOCKER.CHROME")) {
-            System.setProperty("java.net.preferIPv4Stack" , "true");
             mydriver = new RemoteWebDriver(new URL("http:192.168.2.174:4444/wd/hub"), DesiredCapabilities.chrome());
             mydriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
             mydriver.manage().window().maximize();
